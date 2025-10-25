@@ -3,9 +3,9 @@ name: Build, test and release
 on:
   push:
     branches: [ master, setup-extension ]
-    paths:
-      - 'src/**'
-#      - '*.xml'
+#    paths:
+#      - 'src/**'
+##      - '*.xml'
   pull_request:
     branches: [ master ]
 
