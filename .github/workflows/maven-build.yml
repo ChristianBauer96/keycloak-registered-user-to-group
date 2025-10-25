@@ -5,7 +5,7 @@ on:
     branches: [ master, setup-extension ]
     paths:
       - 'src/**'
-      - '*.xml'
+#      - '*.xml'
   pull_request:
     branches: [ master ]
 
@@ -25,4 +25,4 @@ jobs:
       - name: Build
         run: mvn -B package --file pom.xml
       - name: Integration Test
-        run: mvn clean verify failsafe:integration-test failsafe:verify
+        run: mvn failsafe:integration-test failsafe:verify
