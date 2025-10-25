@@ -81,13 +81,11 @@ public class RegisterGroupSelectionFormAction implements FormAction {
 
         if (Validation.isBlank(selectedGroup)) {
             LOG.warn("No group for registration selected: {}", selectedGroup);
-            errors.add(new FormMessage(FIELD_GROUP_SELECTION, "Please select a group"));
+            errors.add(new FormMessage(FIELD_GROUP_SELECTION, "group.selection.required"));
         } else {
             if (formContextConfigExists(config)) {
                 String configuredGroupMappings = config.getConfig().get(CONFIG_GROUP_MAPPINGS);
-                boolean validGroup = existSelectedGroupInMappings(configuredGroupMappings, selectedGroup);
-
-                if (!validGroup) {
+                if (!existSelectedGroupInMappings(configuredGroupMappings, selectedGroup)) {
                     LOG.warn("No valid group for registration selected: {}", selectedGroup);
                     errors.add(new FormMessage(FIELD_GROUP_SELECTION, "group.selection.invalid"));
                 }
