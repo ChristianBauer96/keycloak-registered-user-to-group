@@ -34,17 +34,17 @@ jobs:
         run: |
           echo "Release Version: ${{ github.event.inputs.releaseVersion }}"
           echo "Development Version: ${{ github.event.inputs.developmentVersion }}"
-#      - name: Release Maven artifacts
-#        run: |
-#          mvn -B clean release:prepare release:perform \
-#            -s maven-settings.xml \
-#            -DpushChanges=false \
-#            -DlocalCheckout=true \
-#            -DreleaseVersion=${{ github.event.inputs.releaseVersion }} \
-#            -DdevelopmentVersion=${{ github.event.inputs.developmentVersion }}
-#          git push origin v${{ github.event.inputs.releaseVersion }}
-#        env:
-#          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Release Maven artifacts
+        run: |
+          mvn -B clean release:prepare release:perform \
+            -s maven-settings.xml \
+            -DpushChanges=false \
+            -DlocalCheckout=true \
+            -DreleaseVersion=${{ github.event.inputs.releaseVersion }} \
+            -DdevelopmentVersion=${{ github.event.inputs.developmentVersion }}
+          git push origin v${{ github.event.inputs.releaseVersion }}
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
 #      - name: Release to GitHub releases
 #        uses: softprops/action-gh-release@v2
 #        with:
