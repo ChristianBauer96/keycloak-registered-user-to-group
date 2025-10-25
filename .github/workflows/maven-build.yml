@@ -2,7 +2,7 @@ name: Build, test and release
 
 on:
   push:
-    branches: [ master, setup-extension ]
+    branches: [ master, setup-extension, main ]
 #    paths:
 #      - 'src/**'
 ##      - '*.xml'
