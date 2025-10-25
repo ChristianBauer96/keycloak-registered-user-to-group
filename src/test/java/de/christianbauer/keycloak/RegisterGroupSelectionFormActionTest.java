@@ -141,7 +141,6 @@ public class RegisterGroupSelectionFormActionTest {
 
     @Test
     void testValidate_selectedGroupIsBlank() {
-        errors.add(new FormMessage(FIELD_GROUP_SELECTION, "Please select a group"));
         when(validationContext.getHttpRequest()).thenReturn(httpRequest);
         when(httpRequest.getDecodedFormParameters()).thenReturn(decodedFormData);
 
@@ -157,7 +156,7 @@ public class RegisterGroupSelectionFormActionTest {
                 argThat(errorList ->
                         errorList.size() == 1 &&
                                 FIELD_GROUP_SELECTION.equals(errorList.get(0).getField())&&
-                                "Please select a group".equals(errorList.get(0).getMessage())
+                                "group.selection.required".equals(errorList.get(0).getMessage())
                 )
         );
     }
