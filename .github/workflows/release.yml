@@ -4,13 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       releaseVersion:
-        description: "Default version for the release."
+        description: "Version for the release."
         required: true
         default: "X.Y.Z"
-      developmentVersion:
-        description: "Next default version."
-        required: true
-        default: "X.Y.Z-SNAPSHOT"
 
 jobs:
 
@@ -33,10 +29,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-      - name: Validate Versions
-        run: |
-          echo "Release Version: ${{ github.event.inputs.releaseVersion }}"
-          echo "Development Version: ${{ github.event.inputs.developmentVersion }}"
       - name: Build .jar
         run: mvn -B package -DskipTests --file pom.xml
       - name: Release to GitHub releases

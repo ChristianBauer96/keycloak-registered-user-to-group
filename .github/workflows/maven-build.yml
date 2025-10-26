@@ -1,11 +1,11 @@
-name: Build, test and release
+name: Build and test
 
 on:
   push:
-    branches: [ master, setup-extension, main ]
-#    paths:
-#      - 'src/**'
-##      - '*.xml'
+    branches: [ master ]
+    paths:
+      - 'src/**'
+      - '*.xml'
   pull_request:
     branches: [ master ]
 
