@@ -2,10 +2,10 @@ name: Build and test
 
 on:
   push:
-    branches: [ master, main ]
-#    paths:
-#      - 'src/**'
-#      - '*.xml'
+    branches: [ master ]
+    paths:
+      - 'src/**'
+      - '*.xml'
   pull_request:
     branches: [ master ]
 
