@@ -1,5 +1,7 @@
-package de.christianbauer.keycloak;
+package de.christianbauer.keycloak.registergroupselectionformaction;
 
+import de.christianbauer.keycloak.RegisterGroupSelectionFormActionFactory;
+import de.christianbauer.keycloak.RegistrationGroupSelectionConstants;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.keycloak.models.AuthenticationExecutionModel;

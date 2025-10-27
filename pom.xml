@@ -35,7 +35,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
-        <maven.compiler.release>21</maven.compiler.release>
 
         <!-- Keycloak -->
         <keycloak.version>26.4.2</keycloak.version>
@@ -43,11 +42,12 @@
         <keycloak-admin-client.version>26.0.7</keycloak-admin-client.version>
         <version.junit-bom>6.0.0</version.junit-bom>
         <version.mockito>5.20.0</version.mockito>
-        <version.testcontainers>2.0.1</version.testcontainers>
+        <version.testcontainers>1.21.3</version.testcontainers>
         <version.testcontainers-keycloak>3.9.0</version.testcontainers-keycloak>
         <version.rest-assured>5.5.6</version.rest-assured>
         <version.assertj>3.27.6</version.assertj>
         <version.log4j>2.25.2</version.log4j>
+        <version.selenium>4.34.0</version.selenium>
     </properties>
 
     <build>
@@ -58,7 +58,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.4</version>
+                    <version>3.5.3</version>
                     <configuration>
                         <systemPropertyVariables>
                             <org.jboss.logging.provider>log4j2</org.jboss.logging.provider>
@@ -72,22 +72,14 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>3.5.4</version>
+                    <version>3.5.3</version>
                     <configuration>
-<!--                        <failIfNoTests>true</failIfNoTests>-->
+                        <failIfNoTests>true</failIfNoTests>
                         <systemPropertyVariables>
                             <org.jboss.logging.provider>log4j2</org.jboss.logging.provider>
+                            <webdriver.remote.enableTracing>false</webdriver.remote.enableTracing>
                             <keycloak.version>${keycloak.version}</keycloak.version>
                         </systemPropertyVariables>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>3.1.1</version>
-                    <configuration>
-                        <tagNameFormat>v@{project.version}</tagNameFormat>
-                        <allowTimestampedSnapshots>true</allowTimestampedSnapshots>
                     </configuration>
                 </plugin>
             </plugins>
@@ -217,6 +209,30 @@
             <groupId>com.github.dasniko</groupId>
             <artifactId>testcontainers-keycloak</artifactId>
             <version>${version.testcontainers-keycloak}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${version.testcontainers}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>selenium</artifactId>
+            <version>${version.testcontainers}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${version.selenium}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${version.selenium}</version>
             <scope>test</scope>
         </dependency>
 

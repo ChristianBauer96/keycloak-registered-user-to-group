@@ -1,5 +1,6 @@
-package de.christianbauer.keycloak;
+package de.christianbauer.keycloak.registergroupselectionformaction;
 
+import de.christianbauer.keycloak.RegisterGroupSelectionFormAction;
 import jakarta.ws.rs.core.MultivaluedHashMap;
 import jakarta.ws.rs.core.MultivaluedMap;
 import org.junit.jupiter.api.BeforeEach;
