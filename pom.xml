@@ -37,7 +37,7 @@
         <maven.compiler.target>21</maven.compiler.target>
 
         <!-- Keycloak -->
-        <keycloak.version>26.4.4</keycloak.version>
+        <keycloak.version>26.4.7</keycloak.version>
 
         <keycloak-admin-client.version>26.0.7</keycloak-admin-client.version>
         <version.junit-bom>6.0.0</version.junit-bom>
