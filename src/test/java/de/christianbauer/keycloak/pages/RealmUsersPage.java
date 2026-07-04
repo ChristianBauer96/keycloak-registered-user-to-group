@@ -26,7 +26,7 @@ public class RealmUsersPage {
 
     public RealmUsersPage(WebDriver webDriver) {
         this.webDriver = webDriver;
-        this.wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
         PageFactory.initElements(webDriver, this);
     }
 

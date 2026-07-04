@@ -37,13 +37,13 @@
         <maven.compiler.target>21</maven.compiler.target>
 
         <!-- Keycloak -->
-        <keycloak.version>26.6.1</keycloak.version>
+        <keycloak.version>26.6.4</keycloak.version>
 
-        <keycloak-admin-client.version>26.0.8</keycloak-admin-client.version>
+        <keycloak-admin-client.version>26.0.10</keycloak-admin-client.version>
         <version.junit-bom>6.0.0</version.junit-bom>
         <version.mockito>5.23.0</version.mockito>
         <version.testcontainers>1.21.4</version.testcontainers>
-        <version.testcontainers-keycloak>4.2.0</version.testcontainers-keycloak>
+        <version.testcontainers-keycloak>4.2.1</version.testcontainers-keycloak>
         <version.rest-assured>6.0.0</version.rest-assured>
         <version.assertj>3.27.7</version.assertj>
         <version.log4j>2.25.4</version.log4j>
