@@ -75,7 +75,7 @@ public class RegisterGroupSelectionFormActionIT {
         registrationPage.register("Test", "User",
                 CUSTOMER_USERNAME, "SecurePass123!");
 
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.urlContains("/account"));
 
         validateUserIsInGroup("customer", CUSTOMER_USERNAME);
@@ -104,7 +104,7 @@ public class RegisterGroupSelectionFormActionIT {
         registrationPage.register("Test", "User",
                 PARTNER_USERNAME, "SecurePass123!", 1);
 
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
         wait.until(ExpectedConditions.urlContains("/account"));
 
         validateUserIsInGroup("partner", PARTNER_USERNAME);

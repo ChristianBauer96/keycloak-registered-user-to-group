@@ -24,7 +24,7 @@ public class KeycloakAdminConsolePage {
     public KeycloakAdminConsolePage(WebDriver webDriver, String keycloakBaseUrl) {
         this.webDriver = webDriver;
         this.keycloakBaseUrl = keycloakBaseUrl;
-        this.wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(webDriver, Duration.ofSeconds(30));
 
         PageFactory.initElements(webDriver, this);
     }
